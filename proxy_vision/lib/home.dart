@@ -75,7 +75,7 @@ class HomeState extends State<Home> {
           centerTitle: true,
           elevation: 0,
           title: const Text(
-            'Proxy Vision',
+            'ProxiVision',
             style: TextStyle(
                 fontSize: 40, fontWeight: FontWeight.bold, color: Colors.black),
           ),

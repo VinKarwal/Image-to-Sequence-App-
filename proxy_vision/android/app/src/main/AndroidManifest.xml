@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.proxy_vision">
    <application
-        android:label="proxy_vision"
+        android:label="ProxiVision"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
