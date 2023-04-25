@@ -1,8 +1,8 @@
 from os import listdir
 from pickle import dump
 from keras.applications.vgg16 import VGG16
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array
+from keras_preprocessing import image as img
+# from keras.preprocessing.image import img_to_array
 from keras.applications.vgg16 import preprocess_input
 from keras.models import Model
 
@@ -15,8 +15,8 @@ def extract_features(directory):
 	for name in listdir(directory):
 		filename=directory + '/' + name
 		#print(filename)
-		image=load_img(filename, target_size=(224, 224))
-		image=img_to_array(image)
+		image=img.load_img(filename, target_size=(224, 224))
+		image=img.img_to_array(image)
 		image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
 		image = preprocess_input(image)
 		feature = model.predict(image, verbose=0)
@@ -26,7 +26,7 @@ def extract_features(directory):
 		#print(name)
 	return features
 
-directory = 'Flicker8k_Dataset'
+directory = 'C:\\Users\\ayaan\\OneDrive\\Desktop\\py\\neuralnetwork\\flickr\\data\\flickr30k_images\\flickr30k_images '
 features = extract_features(directory)
 print('Extracted Features: %d' % len(features))
 dump(features, open('features.pkl', 'wb'))

@@ -14,8 +14,8 @@ import os
 
 from . import get_submodules_from_kwargs
 from . import imagenet_utils
-from .imagenet_utils import decode_predictions
-from .imagenet_utils import _obtain_input_shape
+from keras.applications.vgg16 import decode_predictions
+from keras.applications.vgg16 import _obtain_input_shape
 
 preprocess_input = imagenet_utils.preprocess_input
 
